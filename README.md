@@ -1,7 +1,5 @@
 # Propose a cloud application to our users.
 
-# Propose a cloud application to our users.
-
 ## Concept
 
 For many little servers , like the [chatons](https://chatons.org/fr), who are looking for a *google drive*, or *drop box* alternative tool for ther users, the choice is often to use something like *NextCloud*, that is quite a fully featured software (groupware). On the over hand, the only *web file managers* we've founded are meant to be manualy installed by each users.
