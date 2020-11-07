@@ -9,5 +9,10 @@ Propositions:
 
 ## WebDav server + JS WebDav front
 
-- Back end using PHP
-- Front end using https://github.com/perry-mitchell/webdav-client
+### WebDav back end
+
+using PHP and https://sabre.io/dav 
+
+### WebDav front end
+
+using Typescript and https://github.com/perry-mitchell/webdav-client
