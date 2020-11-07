@@ -1,6 +1,25 @@
 # Propose a cloud application to our users.
 
-## Features:
+## Concept
+
+For many little servers , like the [chatons](https://chatons.org/fr), who are looking for a *google drive*, or *drop box* alternative tool, the choice is often to use something like *NextCloud*, that is quite a fully featured software (groupware).
+We are actually thinking of a intermediate form of web tool for managing files, more close to the OS (linux) the users are connected on. This is part of a reflexion about transaprency of how a tool work. Instead of leting the cloud be an unreal boundaryless space, we prefer to rely it with the more trivial idea of users sharing an existing hardware machine.
+
+This application is meant to be used on a unix based server having multiple users registered. The idea is that every user should be able to access his or her directory using the web browsner in addition to CLI or FTP softwares.
+
+
+## Features
+
+- [ ] access user unix personnal folder within a modern and graphical UI
+    - [ ] responsive
+    - [ ] gallery of images
+- [ ] Basic navigation and files/folders edition (rename, copy, move)
+- [ ] trash ?
+- [ ] Download file
+- [ ] One click file or folder publishing link
+- [ ] Synchronization with multiple devices
+- [ ] fast
+- [ ] allow to edit 
 
 
 ## Implementation requirements:
