@@ -36,7 +36,6 @@ her directory using the web browsner in addition to CLI or FTP softwares.
 
 ## Implementation requirements:
 
-- the app would leave under one domain, for instance `cloud.club1.fr`
 - the file publication system is using symbolic links
 - the root of the explorer must be the unix user's home.
 - compatible with LDAP and PAM
@@ -46,49 +45,35 @@ her directory using the web browsner in addition to CLI or FTP softwares.
 
 # Propositions:
 
-## WebDav server + JS WebDav file explorer
+## WebDav server + web interface
 
-The app would consist of these main endpoints:
+two domains are used in this proposition:
 
-- `/`:       a gateway landing page
-- `/login`:  login using post form
-- `/webdav`: the standard webdav API
-- `/files`:  the js file explorer app (static)
+- `webdav.club1.fr`: for the WebDav server
+- `files.club1.fr`:  for the web interface
+
+### WebDav server `webdav.club1.fr`
+
+The WebDav server is using PHP and https://sabre.io/dav. To write the files with
+the correct user, an FPM pool will be created for each user.
+The PHP app will be extremely basic as the authentication is handled by Apache.
+Still, it must be able to select the correct root based on the user curently
+executing it.
+
+The domain must be an apache vhost which handles LDAP http authentication and
+redirects to the correct FPM pool based on the username used for the LDAP auth.
+
+### Web interface `files.club1.fr`
+
+This domain can be served by any webserver, it consists of two endpoints:
+
+- `/app`:    the js file explorer app (static)
 - `/public`: to access the published links (static)
 
-all endpoints noted static will be served directly by the web server statically,
-the other ones are shared by a PHP app which checks that tokens are correct.
-
-### Gateway landing page
-
-This endpoint will do the following exection:
-
-```
-if token not exist or is invalid {
-    display login form
-}
-redirect to '/files'
-```
-
-### Login
-
-```
-user = login using form values
-if user exist {
-    write token username in clear
-    create session
-}
-```
-
-
-### Standard WebDav API
-
-using PHP and https://sabre.io/dav
-
-To write the files with the correct user, an FPM pool will be created for each
-user. The apache vhost will use the correct pool based on the username contained
-in a cookie stored in clear.
-
-### Js file explorer app
+#### Js file explorer app `/app`
 
 using Typescript and https://github.com/perry-mitchell/webdav-client
+
+#### published links `/public`
+
+This location points to the directory where the symbolic links are created.
