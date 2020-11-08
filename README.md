@@ -67,13 +67,14 @@ redirects to the correct FPM pool based on the username used for the LDAP auth.
 
 This domain can be served by any webserver, it consists of two endpoints:
 
-- `/app`:    the js file explorer app (static)
-- `/public`: to access the published links (static)
+- `/app`:           the js file explorer app (static)
+- `/public/<user>`: to access the published links (static)
 
 #### Js file explorer app `/app`
 
 using Typescript and https://github.com/perry-mitchell/webdav-client
 
-#### published links `/public`
+#### published links `/public/<user>`
 
-This location points to the directory where the symbolic links are created.
+This location points to the public directory of each user, where the symbolic
+links are created, whith the help of URL rewriting.
