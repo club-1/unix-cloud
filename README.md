@@ -2,22 +2,34 @@
 
 ## Concept
 
-For many little servers , like the [chatons](https://chatons.org/fr), who are looking for a *google drive*, or *drop box* alternative tool for ther users, the choice is often to use something like *NextCloud*, that is quite a fully featured software (groupware). On the over hand, the only *web file managers* we've founded are meant to be manualy installed by each users.
-We are actually thinking of a intermediate form of web tool for managing files, more close to the OS (linux) the users are connected on. This is part of a reflexion about transaprency of how a tool work. Instead of leting the cloud being an unreal, boundaryless space, we prefer to rely it with the more trivial idea of users sharing an existing hardware located somewhere. We'd like to have the fewest possible layers beetwen the tool interface and how it really works without sacrifying experience.
+For many little servers, like the [chatons](https://chatons.org/fr), who are
+looking for a *google drive*, or *drop box* alternative tool for ther users, the
+choice is often to use something like *NextCloud*, that is a fully featured
+software (groupware). On the other hand, the only *web file managers*
+we have found are meant to be manually installed by each users.
+We are actually thinking of an intermediate form of web tool for managing files,
+closer to the OS (linux) the users are connected on. This is part of a
+reflexion about transparency of how a tool work. Instead of letting the cloud
+be an unreal, boundaryless space, we prefer to bound it with the more trivial
+idea of users sharing an existing hardware located somewhere. We would like to
+have the fewest possible layers beetwen the tool interface and how it really
+works without sacrificing the user experience.
 
-This application is meant to be used on a unix based server having multiple users registered. The idea is that every user should be able to access his or her directory using the web browsner in addition to CLI or FTP softwares.
+This application is meant to be used on a unix based server having multiple
+users registered. The idea is that every user should be able to access his or
+her directory using the web browsner in addition to CLI or FTP softwares.
 
 
 ## Features
 
-- [ ] access user unix personnal folder within a modern and graphical UI
+- [ ] access user unix personal folder within a modern and graphical UI
     - [ ] responsive
     - [ ] gallery of images
-- [ ] Basic navigation and files/folders edition (rename, copy, move)
+- [ ] basic navigation and files/folders edition (rename, copy, move)
 - [ ] trash ?
-- [ ] Download file
-- [ ] One click file or folder publishing link
-- [ ] Synchronization with multiple devices
+- [ ] download file
+- [ ] one click file or folder publishing link
+- [ ] synchronization with multiple devices
 - [ ] fast
 - [ ] open with... button to edit a file with other hosted apps
 
