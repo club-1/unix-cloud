@@ -52,7 +52,7 @@ two domains are used in this proposition:
 - `webdav.club1.fr`: for the WebDav server
 - `files.club1.fr`:  for the web interface
 
-### WebDav server `webdav.club1.fr`
+### WebDav server
 
 The WebDav server is using PHP and https://sabre.io/dav. To write the files with
 the correct user, an FPM pool will be created for each user.
@@ -63,18 +63,18 @@ executing it.
 The domain must be an apache vhost which handles LDAP http authentication and
 redirects to the correct FPM pool based on the username used for the LDAP auth.
 
-### Web interface `files.club1.fr`
+### Web interface
 
 This domain can be served by any webserver, it consists of two endpoints:
 
-- `/app`:           the js file explorer app (static)
-- `/public/<user>`: to access the published links (static)
+- `/app`:     the js file explorer app (static)
+- `/~<user>`: to access the published links (static)
 
-#### Js file explorer app `/app`
+#### Js file explorer app
 
 using Typescript and https://github.com/perry-mitchell/webdav-client
 
-#### published links `/public/<user>`
+#### published links
 
 This location points to the public directory of each user, where the symbolic
-links are created, whith the help of URL rewriting.
+links are created, whith the help of the `mod_userdirs` module of Apache.
